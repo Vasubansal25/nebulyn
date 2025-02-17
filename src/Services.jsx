@@ -1,91 +1,124 @@
-import React from "react";
-import  styles from "./service.module.css";
 import { ChevronRight } from "lucide-react";
+import "./Services.css";
 
-const App = () => {
+const Services = () => {
   return (
-    <div className={styles.container}>
+    <div className="container">
       {/* Header Section */}
-      <header className={styles.header}>
-        <div className={styles.logo}>LOGO</div>
-        <nav className={styles.navbar}>
-          <ul>
-            <li><a href="services.jsx">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About Us</a></li>
-          </ul>
-        </nav>
-        <button className={styles.contactButton}>Contact Us</button>
-      </header>
-
-      {/* Services Hero Section */}
-      <section className={styles.heroSection}>
-        <div className={styles.heroText}>
-          <h2>OUR SERVICES</h2>
-          <p>We deliver innovative solutions to help businesses thrive in the digital age.</p>
-          <button className={styles.exploreButton}>Explore Services</button>
-        </div>
-        <div className={styles.heroImage}>
-          <img src="/images/service-hero.png" alt="Services" />
-        </div>
-      </section>
-
+      <div>
+        <header className="header">
+          <div className="logo">LOGO</div>
+          <nav className="navbar">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </nav>
+          <button className="contactButton">Contact Us</button>
+        </header>
+      </div>
+      
+      {/* Hero Section */}
+      <div>
+        <section className="heroSection">
+          <div className="heroText">
+            <h2>OUR SERVICES</h2>
+            <p>We deliver innovative solutions to help businesses thrive in the digital age.</p>
+            <button className="exploreButton">Explore Services</button>
+          </div>
+          <div className="heroImage">
+            <img src="/images/top.png" alt="illus" />
+          </div>
+        </section>
+      </div>
+      
       {/* Development Services Section */}
-      <section className={styles.devServicesSection}>
-        <h2>End-To-End Development Services</h2>
-        <p>
-          Sometimes, we need to check the time, wondering when our work or meeting will finish,
-          without getting caught by others.
-        </p>
-        <img src="/images/team-dev.png" alt="Development Services" />
-      </section>
-
+      <div>
+        <section className="devServicesSection">
+          <h2>End-To-End Development Services</h2>
+          <p>We provide innovative solutions for modern businesses.</p>
+          <img src="/images/service.png" alt="Development Services" />
+        </section>
+      </div>
+      
       {/* What We Offer Section */}
-      <section className={styles.whatWeOfferSection}>
-        <h2>What We Offer</h2>
-        <p>Comprehensive digital solutions tailored to your business needs.</p>
-        <div className={styles.cardsContainer}>
-          <div className={styles.card}>
-            <h3>Web Development</h3>
-            <p>Create cutting-edge, scalable web applications.</p>
-            <ChevronRight className={styles.arrowIcon} />
+      <div>
+        <section className="whatWeOfferSection">
+          <h2>What We Offer</h2>
+          <p>Comprehensive digital solutions tailored to your business needs.</p>
+          <div className="cardsContainer">
+            {[ 
+              { img: "/images/SVG.png", title: "Web Development", desc: "Create cutting-edge, scalable web applications." },
+              { img: "/images/Vector.png", title: "App Development", desc: "High-performing mobile applications for seamless user experiences." },
+              { img: "/images/SD.png", title: "Software Development", desc: "Tailored software solutions for efficiency." },
+              { img: "/images/SRM.png", title: "CRM Solutions", desc: "Enhance customer relationships." },
+              { img: "/images/LAST.png", title: "ERP Systems", desc: "Streamline business operations." }
+            ].map((service, index) => (
+              <div className="card" key={index}>
+                <img src={service.img} alt={service.title} />
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <ChevronRight className="arrowIcon" />
+              </div>
+            ))}
           </div>
-          <div className={styles.card}>
-            <h3>App Development</h3>
-            <p>High-performing mobile applications for seamless user experiences.</p>
-            <ChevronRight className={styles.arrowIcon} />
+        </section>
+      </div>
+      
+      {/* Team Section */}
+      <div>
+        <section className="team-section">
+          {[ 
+            { img: "/images/webde.png", title: "DESIGNER", desc: "The Designer is the translator of aesthetics and functional needs..." },
+            { img: "/images/dev.png", title: "DEVELOPER", desc: "The Developer often faces problems or projects that require specific solutions..." },
+            { img: "/images/analyst.png", title: "ANALYST", desc: "The Functional Analyst is responsible for success, opportunity, development, and collaboration..." }
+          ].map((member, index) => (
+            <div className="team-member" key={index}>
+              <img src={member.img} alt={member.title} />
+              <div>
+                <h2>{member.title}</h2>
+                <p>{member.desc}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+      </div>
+      
+      {/* Our Process Section */}
+      <div>
+        <section className="process">
+          <h2>Our Process</h2>
+          <p>A streamlined approach to deliver exceptional results</p>
+          <div className="process-container">
+            {[ 
+              { step: "01", title: "Discovery", desc: "We analyze your requirements and plan the perfect solution." },
+              { step: "02", title: "Design", desc: "Creating the blueprint and visual aspects of your solution." },
+              { step: "03", title: "Development", desc: "Building your solution with quality code and best practices." },
+              { step: "04", title: "Delivery", desc: "Testing, deployment, and ongoing support for your project." }
+            ].map((process, index) => (
+              <div className="process-box" key={index}>
+                <h3>{process.step}</h3>
+                <h4>{process.title}</h4>
+                <p>{process.desc}</p>
+              </div>
+            ))}
           </div>
-          <div className={styles.card}>
-            <h3>Software Development</h3>
-            <p>Tailored software solutions for efficiency.</p>
-            <ChevronRight className={styles.arrowIcon} />
-          </div>
-          <div className={styles.card}>
-            <h3>CRM Solutions</h3>
-            <p>Enhance customer relationships.</p>
-            <ChevronRight className={styles.arrowIcon} />
-          </div>
-          <div className={styles.card}>
-            <h3>ERP Systems</h3>
-            <p>Streamline business operations.</p>
-            <ChevronRight className={styles.arrowIcon} />
-          </div>
-        </div>
-      </section>
-
-      {/* Designer Section */}
-      <section className={styles.designerSection}>
-        <h2>DESIGNER</h2>
-        <p>
-          The Designer is the translator of aesthetics and functional needs of a
-          specific sector such as road systems, IT or management. They provide
-          intuitive and user-friendly designs.
-        </p>
-      </section>
+        </section>
+      </div>
+      
+      {/* Contact Section */}
+      <div>
+        <section className="contact-section">
+          <h2>Ready to Transform Your Business?</h2>
+          <p>Let's discuss how our services can help you achieve your business goals.</p>
+          <button className="contactButton">Contact Us Today</button>
+        </section>
+      </div>
     </div>
   );
 };
 
-export default App;
+export default Services;

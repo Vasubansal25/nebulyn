@@ -1,25 +1,27 @@
-import React from "react";
 import "./App.css";
-import "./Portfolio.css";
+import "./portfolio.css";
+import Footer from "./Footer";
+import Nav from "./Nav";
+import { useState } from "react";
 
 const projects = [
   {
     category: "Web Development",
     title: "E-commerce Platform",
     description: "A full-featured e-commerce platform with advanced search and payment options.",
-    image: "https://via.placeholder.com/300x200",
+    image: "/images/img.png",
   },
   {
     category: "Mobile Development",
     title: "Healthcare Mobile App",
     description: "An innovative healthcare platform with telemedicine features.",
-    image: "https://via.placeholder.com/300x200",
+    image: "/images/CRM.png",
   },
   {
     category: "Software Solution",
     title: "CRM System",
     description: "Comprehensive CRM solution with enhanced customer engagement features.",
-    image: "https://via.placeholder.com/300x200",
+    image: "/images/CRM.png",
   },
   {
     category: "Web Development",
@@ -60,25 +62,49 @@ const projects = [
 ];
 
 function Portfolio() {
-  return (
-    <div className="portfolio-container">
-      <header className="portfolio-header">
-        <h1>Our Portfolio</h1>
-        <p>Explore our successful projects and creative solutions</p>
-      </header>
+  const [selectedCategory, setSelectedCategory] = useState("All Projects");
 
-      <div className="filter-buttons">
-        <button>All Projects</button>
-        <button>Web Development</button>
-        <button>Mobile Apps</button>
-        <button>Software Solutions</button>
+  // Filter logic
+  const filteredProjects = selectedCategory === "All Projects"
+    ? projects
+    : projects.filter(project => project.category === selectedCategory);
+
+  return (
+    <div className="portfolioContainer">
+      <Nav />
+      <br></br>
+
+      <section className="section">
+        <div className="contentWrapper">
+          <div className="textContent">
+            <h2>Portfolio</h2>
+            <p>Check out my latest projects and creative work.</p>
+          </div>
+          <div className="imageContainer">
+            <img src="/images/PORT.png" alt="Portfolio Preview" className="image" />
+          </div>
+        </div>
+      </section>
+
+      {/* Filter Buttons */}
+      <div className="filterButtons">
+        {["All Projects", "Web Development", "Mobile Development", "Software Solution"].map((category) => (
+          <button
+            key={category}
+            className={selectedCategory === category ? "active" : ""}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
 
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
+      {/* Project Grid */}
+      <div className="projectGrid">
+        {filteredProjects.map((project, index) => (
+          <div key={index} className="projectCard">
             <img src={project.image} alt={project.title} />
-            <div className="project-content">
+            <div className="projectContent">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <button>View Project</button>
@@ -87,71 +113,30 @@ function Portfolio() {
         ))}
       </div>
 
-      <section className="contact-form">
-        <h2>Lets start a project together</h2>
-        <form>
-          <div className="form-grid">
-            <input type="text" placeholder="First name" required />
-            <input type="text" placeholder="Last name" required />
-            <input type="email" placeholder="E-mail" required />
-            <input type="tel" placeholder="Phone" required />
-            <input type="text" placeholder="Company" />
-            <select>
-              <option>Category</option>
-              <option>Web Development</option>
-              <option>Mobile Apps</option>
-              <option>Software Solutions</option>
-            </select>
-            <select>
-              <option>Country</option>
-              <option>USA</option>
-              <option>Canada</option>
-            </select>
-            <select>
-              <option>State</option>
-              <option>California</option>
-              <option>New York</option>
-            </select>
-            <input type="text" placeholder="City" />
-            <input type="text" placeholder="Zip/Postal Code" />
-            <input type="text" placeholder="Subject" />
-            <textarea placeholder="Message" rows="4"></textarea>
+      {/* Contact Form */}
+      <section className="contactForm">
+        <div className="container">
+          <div className="form-wrapper">
+            <h2 className="title">Lets start a project together</h2>
+            <form className="form-grid">
+              <input type="text" placeholder="First name" className="input-field" />
+              <input type="text" placeholder="Last name" className="input-field" />
+              <input type="email" placeholder="E-mail" className="input-field" />
+              <input type="text" placeholder="Phone" className="input-field" />
+              <input type="text" placeholder="Company" className="input-field" />
+              <input type="text" placeholder="City" className="input-field" />
+              <input type="text" placeholder="Zip/Postal Code" className="input-field" />
+              <input type="text" placeholder="Subject" className="input-field full-width" />
+              <textarea placeholder="Message" className="input-field full-width textarea"></textarea>
+              <button type="submit" className="submit-button">Submit</button>
+            </form>
           </div>
-          <button type="submit">Submit</button>
-        </form>
+        </div>
       </section>
 
-      <footer className="portfolio-footer">
-        <div className="footer-content">
-          <div>LOGO</div>
-          <div className="footer-links">
-            <div>Quick Links
-              <ul>
-                <li>About Us</li>
-                <li>Services</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
-              </ul>
-            </div>
-            <div>Services
-              <ul>
-                <li>Web Development</li>
-                <li>App Development</li>
-                <li>Cloud Solutions</li>
-                <li>Consulting</li>
-              </ul>
-            </div>
-            <div>Newsletter
-              <form>
-                <input type="email" placeholder="Enter your email" />
-                <button>Subscribe</button>
-              </form>
-            </div>
-          </div>
-          <div>© 2024 TechCorp. All rights reserved.</div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
+
 export default Portfolio;
