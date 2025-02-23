@@ -119,7 +119,7 @@ function Portfolio() {
           <div className="form-wrapper">
             <h2 className="title">Lets start a project together</h2>
             <form className="form-grid">
-              <input type="text" placeholder="First name" className="input-field" />
+              <input type="text" placeholder="First Name" className="input-field" />
               <input type="text" placeholder="Last name" className="input-field" />
               <input type="email" placeholder="E-mail" className="input-field" />
               <input type="text" placeholder="Phone" className="input-field" />

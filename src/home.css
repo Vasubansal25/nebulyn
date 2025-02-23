@@ -42,23 +42,33 @@ body {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #007bff;
 }
-
-.contact-btn {
+.read-more{
   background-color: #007bff;
   color: white;
-  width: 100px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-.contact-btn:hover {
+.contact-btn, .get-started {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover, .get-started:hover, .read-more:hover {
   background-color: #0056b3;
 }
 
@@ -95,21 +105,6 @@ body {
   margin: 0.5rem 0;
 }
 
-.get-started {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.get-started:hover {
-  background-color: #0056b3;
-}
-
-/* Hero Image */
 .hero-image img {
   max-width: 100%;
   border-radius: 8px;
@@ -119,8 +114,8 @@ body {
 .stats {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0;
   text-align: center;
+  margin: 2rem 0;
 }
 
 .statCard {
@@ -148,21 +143,34 @@ body {
   padding: 1.5rem;
   border-radius: 8px;
   width: 23%;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
 .serviceCard:hover {
   transform: translateY(-5px);
-  transition: all 0.3s ease;
 }
 
 .serviceCard h3 {
   color: #007bff;
 }
 
+.serviceCard button {
+  background-color: rgb(203, 194, 194);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.serviceCard button:hover {
+  background-color: #666;
+}
+
 /* About Section */
-/* About Us Section */
 .about-us {
   display: flex;
   justify-content: center;
@@ -179,7 +187,6 @@ body {
   gap: 2rem;
 }
 
-/* Left Side - Image */
 .about-image {
   flex: 1;
 }
@@ -192,7 +199,6 @@ body {
   object-fit: cover;
 }
 
-/* Right Side - Content */
 .about-content {
   flex: 1;
 }
@@ -200,6 +206,7 @@ body {
 .about-content h2 {
   font-size: 2rem;
   font-weight: bold;
+  color: black;
   margin-bottom: 1rem;
 }
 
@@ -209,15 +216,11 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Stats */
+/* About Stats */
 .about-stats {
   display: flex;
   gap: 3rem;
   margin-bottom: 1.5rem;
-}
-
-.stat {
-  text-align: center;
 }
 
 .stat h3 {
@@ -230,25 +233,6 @@ body {
   font-size: 0.9rem;
   color: #666;
 }
-
-/* Button */
-.read-more {
-  background-color: #4c4cd3;
-  color: wheat;
-  width: 100%;
-  width: 200px;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-.read-more:hover {
-  background-color: #0056b3;
-}
-
 
 /* Why Choose Us */
 .whyChooseUs {
@@ -270,11 +254,20 @@ body {
 }
 
 .whyChooseUs li {
-  margin: 0.5rem 0;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
-/* Insight Section */
+.whyChooseUs li img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Insights Section */
 .insight {
   display: flex;
   justify-content: space-between;
@@ -300,6 +293,10 @@ body {
   color: #007bff;
 }
 
+.insightsss {
+  color: black;
+  font-size: 30px;
+}
 
 /* Testimonial Section */
 .testimonial {
@@ -334,6 +331,10 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  background-color: #7aa1d3;
+  color: black;
+  border-radius: 20px;
+  padding: 1rem;
 }
 
 .testimonial-rating span {
@@ -368,4 +369,3 @@ body {
 .dot.active {
   background-color: #004aad;
 }
-

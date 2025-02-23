@@ -32,6 +32,7 @@
 .exploreButton {
   background-color: #007bff;
   color: white;
+  max-width: 50%;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
@@ -172,6 +173,10 @@
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+}
+.first{
+  display: inline-block;
+
 }
 
 @media screen and (min-width: 768px) {

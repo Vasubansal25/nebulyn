@@ -7,10 +7,12 @@ import APP from './home.jsx';
 import Contact from './Contact.jsx';
 import Insights from './Insights.jsx';
 import App from './home.jsx';
+import Aboutus from './Aboutus.jsx';
+import Nav from './Nav.jsx'
 
 
 createRoot(document.getElementById('root')).render(
-  <Services/>
+  <Aboutus/>
    
 
   

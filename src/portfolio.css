@@ -32,22 +32,22 @@
   color: gray;
 }
 
-.imageContainer {
+.imageContainer  {
   width: 100%;
-  max-width: 300px;
+  
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-left: 100%;
   margin-top: 0;
 }
-
-.image {
-  width: 100%;
-  border-radius: 10px;
-  height: auto;
+ img.image{
+  width: 70%;
+  width: 400px;
 
 }
+
+
 
 /* Filter Buttons */
   
@@ -134,7 +134,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: white;
+  background-color: rgb(253, 251, 251);
 }
 
 .form-wrapper {
@@ -161,7 +161,7 @@
 
 .input-field {
   background-color: white;
-  color: white;
+  color: rgb(0, 0, 0);
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px;
@@ -252,9 +252,5 @@
 .footerLinks button:hover {
   background-color: #e0a800;
 }
-.imageContainer {
-  display: flex;
-  justify-content: flex-end; /* Moves image to the right */
-  align-items: center;
-}
+
 

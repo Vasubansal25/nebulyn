@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./home.css";
-import { ChevronRight } from "lucide-react"; 
+import { ChevronRight ,ChevronDown, BusFront } from "lucide-react"; 
 import Contact from "./Contact"; // Ensure this component is imported
 import Insights from "./Insights";
 import Portfolio from "./Portfolio";
@@ -101,22 +101,24 @@ const App = () => {
             <div className="serviceCard">
               <h3>Web Development</h3>
               <p>Build modern and responsive web applications.</p>
-              <ChevronRight className="arrowIcon" />
+              <button><ChevronRight className="arrowIcon" /> learn more</button>
             </div>
             <div className="serviceCard">
               <h3>App Development</h3>
               <p>Develop high-performing mobile applications.</p>
-              <ChevronRight className="arrowIcon" />
+              <button><ChevronRight className="arrowIcon" /> learn more</button>
             </div>
             <div className="serviceCard">
               <h3>CRM Solutions</h3>
               <p>Optimize customer relationships with custom CRM solutions.</p>
-              <ChevronRight className="arrowIcon" />
+              <button><ChevronRight className="arrowIcon" /> learn more</button>
+            
+             
             </div>
             <div className="serviceCard">
               <h3>Software Development</h3>
               <p>Delivering scalable software for businesses.</p>
-              <ChevronRight className="arrowIcon" />
+              <button><ChevronRight className="arrowIcon" /> learn more</button>
             </div>
           </div>
         </section>
@@ -159,19 +161,28 @@ const App = () => {
 
         {/* Why Choose Us */}
         <section className="whyChooseUs">
-          <h2>Why Choose Us</h2>
-          <p>
-            Sometimes, we need to check the time, wondering when our work or
-            meeting will finish, without getting caught by others.
-          </p>
-          <ul>
-            <li>✔ Attention to Detail</li>
-            <li>✔ Full-Scale Success</li>
-            <li>✔ Experts Only</li>
-            <li>✔ Meeting Deadlines</li>
-            <li>✔ Award-Winning</li>
-          </ul>
-        </section>
+  <h2>Why Choose Us</h2>
+  <p>
+    Sometimes, we need to check the time, wondering when our work or meeting will finish, without getting caught by others.
+  </p>
+  <ul>
+    <li>
+      <img src="/images/homevect.png" alt="Icon" />
+      Attention to Detail
+    </li>
+    <li>
+    <img src="/images/vect2.png" alt="Icon" />Full-Scale Success</li>
+    <li>
+    <img src="/images/vect3.png" alt="Icon" /> Experts Only</li>
+    <li>
+    <img src="/images/vect2.png" alt="Icon" /> Meeting Deadlines</li>
+    <li> 
+    <img src="/images/vect4.png" alt="Icon" />Award-Winning</li>
+  </ul>
+</section>
+
+<div>
+        <h1 className="insightsss">Latest Insights</h1>
 
         <section className="insight">
           <div className="ltinsight">
@@ -190,6 +201,7 @@ const App = () => {
             <p>Cybersecurity is the new need.</p>
           </div>
         </section>
+        </div>
       </div>
 
       <section className="testimonial">

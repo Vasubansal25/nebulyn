@@ -40,30 +40,50 @@
   }
   
   /* Contact button */
-  .contact-btn {
-    background: #0047ab;
-    color: white;
-    max-width:100%;
-    width: 150px;
-    height: 40px;
-    padding: 10px 20px;
-    border-radius: 25px;
+  .contact-btn{
+    background: #0057b3; /* Blue background */
+    color: white; /* White text */
+    width: 120px; /* Slim width */
+    height: 35px; /* Adjusted height */
+    padding: 5px 15px;
+    border-radius: 100px; /* More rounded */
     text-decoration: none;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: 500;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 5px;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .contact-btn span {
-    font-size: 20px;
-  }
-  
-  .contact-btn:hover {
-    background: #00378e;
-  }
+    border: none; /* No solid border */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Neon glow effect */
+.button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    background: rgba(0, 174, 255, 0.5); /* Light blue glow */
+    filter: blur(10px); /* Glow effect */
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.button:hover {
+    background: #00408a; /* Darker blue */
+}
+
+.button:hover::before {
+    filter: blur(15px); /* Stronger glow */
+}
+
   
   /* Responsive Design */
   @media (max-width: 768px) {

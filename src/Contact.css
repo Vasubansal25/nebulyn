@@ -286,6 +286,9 @@ button:hover {
   font-size: 20px;
   transition: 0.3s;
 }
+.social-icons{
+  background-color: #dcdfe3;
+}
 
 .social-icons a:hover {
   color: #ddd;
